@@ -1,0 +1,29 @@
+public class Main{
+
+public static void main(String[] args) throws Exception {
+    
+    Scanner scn = new Scanner(System.in);
+    int n = scn.nextInt();
+    int fibn =  FibonacciDp( n,new int [n+1]);
+    System.out.println(fibn);
+    
+ }
+ public static int FibonacciDp(int n,int []qb)
+ {
+     if(n==0 || n==1)
+     {
+         return n;
+     }
+     
+     if(qb[n]!=0)
+     {
+         return qb[n];
+     }
+     
+     int fib =  FibonacciDp(n-1,qb) + FibonacciDp(n-2,qb);
+     
+     qb[n]=fib;
+     return fib;
+ }
+
+}
